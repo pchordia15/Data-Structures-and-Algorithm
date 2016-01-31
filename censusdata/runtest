@@ -1,0 +1,8 @@
+#!/bin/bash
+make clean
+make csort
+rm -f output-testDataNoDups
+echo "****executing - no output expected"
+csort  testDataNoDups.csv > output-testDataNoDups
+echo "****testing result - no output except times means success"
+diff correct-testDataNoDups output-testDataNoDups
